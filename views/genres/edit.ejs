@@ -1,0 +1,12 @@
+<% include ../partials/header %>
+	<h1>Edit Genre</h1>
+
+	<form method="post" action="/genres/edit/<%= id %>">
+		<div class="form-group">
+			<label>Name</label>
+			<input type="text" class="form-control" name="name" value="<%= genre.name %>">
+		</div>
+
+		<button type="submit" class="btn btn-success">Submit</button>
+	</form>
+<% include ../partials/footer %>

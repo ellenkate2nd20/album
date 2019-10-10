@@ -1,0 +1,58 @@
+<% include ../partials/header %>
+	<h1>Edit Album</h1>
+
+	<form method="post" action="/albums/edit/<%= id %>" enctype="multipart/form-data">
+		<div class="form-group">
+			<label>Artist</label>
+			<input type="text" class="form-control" name="artist" value="<%= album.artist %>">
+		</div>
+
+		<div class="form-group">
+			<label>Album Title</label>
+			<input type="text" class="form-control" name="title" value="<%= album.title %>">
+		</div>
+
+		<div class="form-group">
+			<label>Genre</label>
+			<select name="genre" class="form-group">
+				<% for(var i = 0; i< genres.length; i++) { %>
+				<option value="<%= genres[i].name %>"	
+					<% if(album.genre == genres[i].name) { %>
+						selected
+					<% } %>>
+					<%= genres[i].name %>
+				</option>
+				<% } %>
+			</select>
+		</div>
+
+		<div class="form-group">
+			<label>Album Info</label>
+			<textarea type="text" class="form-control" name="info">
+				<%= album.info %>
+			</textarea>
+		</div>
+
+		<div class="form-group">
+			<label>Realeased Year</label>
+			<input type="text" class="form-control" name="year" value="<%= album.year %>">
+		</div>
+
+		<div class="form-group">
+			<label>Record Label</label>
+			<input type="text" class="form-control" name="label" value="<%= album.label %>">
+		</div>
+
+		<div class="form-group">
+			<label>Number of Tracks</label>
+			<input type="number" class="form-control" name="tracks" value="<%= album.tracks %>">
+		</div>
+
+		<div class="form-group">
+			<label>Album Cover</label>
+			<input type="file" class="form-control" name="cover" value="<%= album.cover %>">
+		</div>
+
+		<button type="submit" class="btn btn-success">Submit</button>
+	</form>
+<% include ../partials/footer %>

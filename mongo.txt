@@ -1,0 +1,24 @@
+use nodepath
+
+show dbs
+
+db.createCollection('users');
+
+show collections
+
+db.users.insert({name:'2nd20',email:'2nd20@gmail.com',username:'2nd20',password:'9012'});
+
+db.users.update({username:'ellen'},{$set:{email:'ellenkate2nd20@gmail.com'}});
+
+db.users.find();
+
+db.users.find().pretty();
+
+db.users.remove({username:'2nd20'});
+
+---------------------------------------
+db.posts.insert({title:'Blog Post One',category:'Technology',author:'Kate',body:'This is he body',date:ISODate()});
+
+db.posts.remove({author:''});
+
+db.categories.insert({name:'Technology'});
